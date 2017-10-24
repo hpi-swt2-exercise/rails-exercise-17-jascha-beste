@@ -19,9 +19,9 @@ describe "Index author page", type: :feature do
   end
 
   it "should have show link if author exists" do
-    alan = FactoryGirl.create :author
+    FactoryGirl.create :author
     visit authors_path
 
-    expect(page).to have_css "a", text: "show"
+    expect(page).to have_css "a", text: "Show"
   end
 end
