@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "Author", :type => :model do
-  let(:author) {Author.new(true,{first_name: 'Alan', last_name: 'Turing', homepage: 'http://wikipedia.org/Alan_Turing'})}
+  let(:author) {Author.new({first_name: 'Alan', last_name: 'Turing', homepage: 'http://wikipedia.org/Alan_Turing'})}
   subject{author}
   it "should have correct first name, last name and homepage" do
     expect(author.first_name).to eq "Alan"
