@@ -7,6 +7,10 @@ class AuthorsController < ApplicationController
     redirect_to @author
   end
 
+  # GET /authors/
+  def index
+  end
+
   # GET /authors/new
   def new
   end
