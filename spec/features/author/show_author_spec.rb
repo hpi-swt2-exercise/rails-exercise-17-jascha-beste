@@ -10,7 +10,7 @@ describe "Show author page" do
     alan = FactoryGirl.create :author
     visit author_path alan
 
-    expect(page).to have_content(alan.name)
+    expect(page).to have_content(alan.first_name)
     expect(page).to have_content(alan.homepage)
   end
 end
