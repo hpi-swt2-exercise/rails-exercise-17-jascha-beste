@@ -17,4 +17,11 @@ describe "Index author page", type: :feature do
     visit authors_path
     expect(page).to have_css "a", text: "Add author"
   end
+
+  it "should have show link if author exists" do
+    alan = FactoryGirl.create :author
+    visit authors_path
+
+    expect(page).to have_css "a", text: "show"
+  end
 end
