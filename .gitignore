@@ -19,3 +19,5 @@
 /nbproject
 # Ignore rubymine files
 /.idea
+# Ignore generator file
+/.generators
