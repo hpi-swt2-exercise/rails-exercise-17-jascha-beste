@@ -30,7 +30,7 @@ class AuthorsController < ApplicationController
 
   # DELETE /authors/1
   def destroy
-    @authors = Authors.find(params[:id])
+    @author = Author.find(params[:id])
     @author.destroy
 
     redirect_to authors_path
