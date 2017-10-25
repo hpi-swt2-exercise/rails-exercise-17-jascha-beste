@@ -25,6 +25,11 @@ describe "New author page", type: :feature do
     expect(author.first_name).to eq "Alan"
     expect(author.last_name).to eq "Turing"
     expect(author.homepage).to eq "http://wikipedia.org/Alan_Turing"
+  end
 
+  it "should show error if last name is left blank" do
+    visit new_author_path
+    find('input[type="submit"]').click
+    expect(page).to have_content("Last name can't be blank")
   end
 end
