@@ -13,7 +13,15 @@ class PapersController < ApplicationController
     end
   end
 
-  def author_params
+  def index
+    @paper = Paper.all
+  end
+
+  def show
+    @paper = Paper.find params[:id]
+  end
+
+  def paper_params
     params.require(:paper).permit(:title, :venue, :year)
   end
 end
