@@ -16,6 +16,8 @@ class AuthorsController < ApplicationController
     @authors = Author.all
   end
 
+  def edit
+  end
   # GET /authors/new
   def new
     @author = Author.new
