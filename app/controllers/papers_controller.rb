@@ -14,7 +14,7 @@ class PapersController < ApplicationController
   end
 
   def index
-    @paper = Paper.all
+    @papers = Paper.all
   end
 
   def show
