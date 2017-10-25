@@ -1,0 +1,23 @@
+<h1>Listing Papers</h1>
+
+<%= javascript_include_tag "application" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Homepage</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @papers.each do |paper| %>
+      <tr>
+        <td><%= paper.name %></td>
+        <td><%= paper.homepage %></td>
+        <td> <%= link_to 'Show', paper_path(paper) %></td>
+        <td> <%= link_to 'Edit', edit_paper_path(paper) %></td>
+        <td> <%= link_to 'Destroy', paper_path(paper), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
+<%= link_to 'Add paper', new_paper_path %>
