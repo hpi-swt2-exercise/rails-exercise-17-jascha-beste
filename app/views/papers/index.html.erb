@@ -4,16 +4,18 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Homepage</th>
+    <th>Title</th>
+    <th>Venue</th>
+    <th>Year</th>
     <th></th>
     <th></th>
   </tr>
 
   <% @papers.each do |paper| %>
       <tr>
-        <td><%= paper.name %></td>
-        <td><%= paper.homepage %></td>
+        <td><%= paper.title %></td>
+        <td><%= paper.venue %></td>
+        <td><%= paper.year %></td>
         <td> <%= link_to 'Show', paper_path(paper) %></td>
         <td> <%= link_to 'Edit', edit_paper_path(paper) %></td>
         <td> <%= link_to 'Destroy', paper_path(paper), method: :delete, data: { confirm: 'Are you sure?' } %></td>
