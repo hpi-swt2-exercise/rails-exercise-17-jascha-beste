@@ -31,4 +31,11 @@ describe "Index author page", type: :feature do
 
     expect(page).to have_css "a", text: "Edit"
   end
+
+  it "should have delete link if author exists" do
+    FactoryGirl.create :author
+    visit authors_path
+
+    expect(page).to have_css "a", text: "Destroy"
+  end
 end

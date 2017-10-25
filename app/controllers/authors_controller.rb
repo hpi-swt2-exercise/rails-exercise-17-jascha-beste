@@ -16,6 +16,8 @@ class AuthorsController < ApplicationController
     @authors = Author.all
   end
 
+
+  # PATCH /authors/1
   def update
     @author = Author.find(params[:id])
 
@@ -26,6 +28,15 @@ class AuthorsController < ApplicationController
     end
   end
 
+  # DELETE /authors/1
+  def destroy
+    @authors = Authors.find(params[:id])
+    @author.destroy
+
+    redirect_to authors_path
+  end
+
+  # GET /authors/1/edit
   def edit
     @author = Author.find(params[:id])
   end
