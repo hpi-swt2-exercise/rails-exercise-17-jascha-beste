@@ -14,6 +14,7 @@ class PapersController < ApplicationController
   end
   def edit
     @paper = Paper.find(params[:id])
+    @authors = Author.all
   end
 
   def destroy
