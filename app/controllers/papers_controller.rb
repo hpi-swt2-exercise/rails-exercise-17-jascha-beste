@@ -43,6 +43,6 @@ class PapersController < ApplicationController
   end
 
   def paper_params
-    params.require(:paper).permit(:title, :venue, :year)
+    params.require(:paper).permit(:title, :venue, :year, author_ids: [])
   end
 end

@@ -3,7 +3,8 @@ require 'rails_helper'
 describe "Edit author page", type: :feature do
 
   it "should render without error" do
-    visit authors_path
+    alan = FactoryGirl.create :author
+    visit edit_author_path alan
   end
 
   it "should save the author edits on submit" do
