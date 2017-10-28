@@ -36,6 +36,7 @@ class PapersController < ApplicationController
 
   def index
     @papers = Paper.all
+    @papers = @papers.year(params[:year]) if params[:year].present?
   end
 
   def show

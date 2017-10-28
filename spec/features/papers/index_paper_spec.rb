@@ -12,7 +12,7 @@ describe "Index paper page", type: :feature do
     paper2.title = "title2"
     paper2.year = 1968
     paper2.save!
-    visit papers_path papers: 1950
+    visit papers_path year: 1950
     expect(page).to_not have_content(paper2.title)
   end
 
