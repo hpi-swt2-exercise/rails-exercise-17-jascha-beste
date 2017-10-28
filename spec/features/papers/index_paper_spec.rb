@@ -6,6 +6,16 @@ describe "Index paper page", type: :feature do
     visit papers_path
   end
 
+  it "should be able to select by year" do
+    paper1 = FactoryGirl.create :paper
+    paper2 = FactoryGirl.create :paper
+    paper2.title = "title2"
+    paper2.year = 1968
+    paper2.save!
+    visit papers_path papers: 1950
+    expect(page).to_not have_content(paper2.title)
+  end
+
   it "should show a papers title if one exists" do
     paper = FactoryGirl.create :paper
     visit papers_path
